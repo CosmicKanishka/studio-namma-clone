@@ -4,21 +4,24 @@ let navbar = document.createElement("ul");
   let menu = document.createElement("ul");
   menu.setAttribute("id", "menu")
 
-  function createListElement(value) {
+  function createListElement(value , link) {
     let li = document.createElement("li");
-    li.innerText = value;
+    let a = document.createElement("a");
+    a.setAttribute("href",link)
+    a.innerText = value;
+    li.append(a);
     menu.append(li);
 
     document.body.append(menu)
   }
 
-  createListElement("HOME");
-  createListElement("WORK");
-  createListElement("STUDIO");
-  createListElement("SERVICES");
-  createListElement("PLANS");
-  createListElement("APPROACH");
-  createListElement("NEWS");
+  createListElement("HOME", "index.html");
+createListElement("WORK", "work.html");
+createListElement("STUDIO", "studio.html");
+createListElement("SERVICES", "service.html");
+createListElement("PLANS", "plans.html");
+createListElement("APPROACH", "approach.html");
+createListElement("NEWS", "news.html");
 
 
 

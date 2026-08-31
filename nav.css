@@ -45,3 +45,8 @@ body{
 #menu.show{
   top: 9%;
 }
+
+a{
+  color: black;
+  text-decoration: none;
+}
