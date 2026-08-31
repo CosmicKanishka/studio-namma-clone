@@ -1,2 +1,2 @@
-# studio-nama-clone
-A frontend replica of Studio Nama to practice responsive layouts, clean typography, and animations.
+# studio-namma-clone
+A frontend replica of Studio Namma to practice responsive layouts, clean typography, and animations.
