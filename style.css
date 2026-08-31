@@ -15,9 +15,9 @@
       text-align: center;
     }
 
-    .animate.show {
+    .animate.show { 
       transform: rotateX(0deg);
-    }
+     }
 
     .content>iframe {
       width: 100%;
@@ -61,11 +61,11 @@
     }
     #videoCursor {
       position: fixed;
-      height: 100px;
-      width: 100px;
-      /* border-radius: 50 */
-      left: 0px;
-      top: 0px;
+      /* height: 100px;
+      width: 100px; */
+      border-radius: 50;
+      left: 1000px;
+      top: 1000px;
       /* pointer-events: none; */
       z-index: 999;
       transition: 0.05s ease-in-out;
