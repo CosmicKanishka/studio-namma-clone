@@ -15,7 +15,7 @@ let navbar = document.createElement("ul");
     document.body.append(menu)
   }
 
-  createListElement("HOME", "index.html");
+  createListElement("HOME", "home.html");
 createListElement("WORK", "work.html");
 createListElement("STUDIO", "studio.html");
 createListElement("SERVICES", "service.html");
