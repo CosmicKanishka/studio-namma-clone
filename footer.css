@@ -1,0 +1,133 @@
+
+
+#footer {
+    min-height: 100vh;
+    background: #e5e5e5;
+
+    overflow: hidden;
+
+    position: relative;
+
+    padding: 15px 20px;
+}
+
+
+
+
+.footerTop {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    min-height: 220px;
+
+}
+
+
+.footerTop p {
+
+    margin: 5px 0;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.footerCenter {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.footerEmail {
+
+    margin-top: 30px !important;
+
+    margin-bottom: 30px !important;
+
+}
+
+
+.footerRight {
+
+    text-align: right;
+
+}
+
+
+
+
+.nammaContainer {
+
+    height: 550px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+}
+
+
+.nammaText {
+
+    margin: 0;
+
+    font-size: 29vw;
+
+    font-weight: 900;
+
+    line-height: 0.75;
+
+    letter-spacing: -1vw;
+
+    color: #111;
+
+    transform: scaleY(0);
+
+    transform-origin: bottom center;
+
+    transition: transform 1s ease-out;
+
+}
+
+
+.nammaText.showNamma {
+
+    transform: scaleY(1);
+
+}
+
+
+
+.footerBottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 10px;
+
+}
+
+
+.footerBottom p {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+}
