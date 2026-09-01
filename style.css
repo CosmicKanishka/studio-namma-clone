@@ -53,6 +53,71 @@
     .slideImage > .show > img{
       transform: translateX(0);
     }
+
+.slideImage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    overflow: hidden;
+}
+
+.imageBox {
+    position: relative;
+    overflow: hidden;
+}
+
+.imageBox img {
+    width: 100%;
+    display: block;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.imageBox .left {
+    transform: translateX(-50%) translateY(40%) rotateZ(-20deg);
+    transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.imageBox .right {
+    transform: translateX(50%) translateY(40%) rotateZ(20deg);
+    transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.slideImage > .show .left,
+.slideImage > .show .right {
+    transform: translateX(0) translateY(0) rotateZ(0);
+}
+
+.imageBox:hover img {
+    filter: blur(8px);
+    transform: scale(1.03);
+}
+
+.imageBox:hover .left,
+.imageBox:hover .right {
+    filter: blur(8px);
+    transform: scale(1.03);
+}
+
+.hoverVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 2;
+}
+
+.imageBox:hover .hoverVideo {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
     #cursor {
       background-color: blue;
       position: fixed;
