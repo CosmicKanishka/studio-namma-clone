@@ -71,6 +71,106 @@ createListElement("NEWS", "news.html");
     }
   })
 
+
+
+let contactPage = document.createElement("div");
+contactPage.setAttribute("id", "contactPage");
+
+
+contactPage.innerHTML = `
+    <div class="contactTop">
+        <h1>LET'S WORK<br>TOGETHER</h1>
+
+        <button id="closeContact">×</button>
+    </div>
+
+    <div class="contactForm">
+
+        <div class="formRow">
+            <label>NAME</label>
+            <input type="text" placeholder="YOUR NAME" id="contactName">
+        </div>
+
+        <div class="formRow">
+            <label>EMAIL</label>
+            <input type="email" placeholder="YOUR EMAIL" id="contactEmail" id="contactPhone">
+        </div>
+
+        <div class="formRow">
+            <label>PHONE</label>
+            <input type="text" placeholder="YOUR PHONE">
+        </div>
+
+        <div class="formRow">
+            <label>INTEREST</label>
+
+            <div class="interestButtons">
+                <button>DESIGN</button>
+                <button>WEBFLOW DEVELOPMENT</button>
+                <button>FULL PACKAGE</button>
+            </div>
+        </div>
+
+        <div class="formRow">
+            <label>MESSAGE</label>
+
+            <textarea placeholder="GIVE US A SHORT PROJECT BRIEF, DEADLINE, BUDGET, ETC." id="contactMessage"></textarea>
+        </div>
+
+    </div>
+
+    <div class="contactBottom">
+
+        <p>BY CLICKING ON "SEND", YOU ACCEPT OUR POLICY.</p>
+
+        <button id="sendButton">SEND</button>
+
+    </div>
+`;
+
+
+document.body.append(contactPage);
+
+// Select interest buttons
+let interestButtons = contactPage.querySelectorAll(".interestButtons button");
+
+interestButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active class from all buttons
+        interestButtons.forEach((btn) => {
+            btn.classList.remove("selected");
+        });
+
+        // Add active class to clicked button
+        button.classList.add("selected");
+
+    });
+
+});
+
+li4.addEventListener("click", () => {
+
+    contactPage.classList.add("showContact");
+
+});
+
+
+// Close contact page
+document.getElementById("closeContact").addEventListener("click", () => {
+
+    contactPage.classList.remove("showContact");
+
+});
+
+let sendButton = document.getElementById("sendButton");
+sendButton.addEventListener("click", () => {
+
+    alert("SEND button clicked!");
+
+});
+
   navbar.append(li1, li2, li3, li4);
   document.body.append(navbar)
   console.log(navbar);
