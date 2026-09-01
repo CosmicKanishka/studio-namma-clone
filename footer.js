@@ -3,7 +3,6 @@ let footer = document.createElement("footer");
 footer.id = "footer";
 
 footer.innerHTML = `
-
     <div class="footerTop">
 
         <div class="footerLeft">
@@ -19,9 +18,7 @@ footer.innerHTML = `
             <p>SITE EN FRANÇAIS</p>
         </div>
 
-
         <div class="footerCenter">
-
             <p>LET'S TALK!</p>
 
             <p class="footerEmail">
@@ -32,25 +29,18 @@ footer.innerHTML = `
                 COPYRIGHT 2025<br>
                 STUDIO NAMMA
             </p>
-
         </div>
 
-
         <div class="footerRight">
-
             <p>MENU</p>
-
             <p>LET'S TALK!</p>
-
         </div>
 
     </div>
 
 
     <div class="nammaContainer">
-
         <h1 class="nammaText">NAMMA</h1>
-
     </div>
 
 
@@ -61,35 +51,6 @@ footer.innerHTML = `
         <p>LOS ANGELES, CA</p>
 
     </div>
-
 `;
 
 document.body.append(footer);
-
-
-/* NAMMA scroll animation */
-
-let nammaText = footer.querySelector(".nammaText");
-
-let nammaObserver = new IntersectionObserver((entries) => {
-
-    entries.forEach((entry) => {
-
-        if (entry.isIntersecting) {
-
-            nammaText.classList.add("showNamma");
-
-        } else {
-
-            nammaText.classList.remove("showNamma");
-
-        }
-
-    });
-
-}, {
-    threshold: 0.2
-});
-
-
-nammaObserver.observe(nammaText);
