@@ -24,12 +24,12 @@ footer.innerHTML = `
     </section>
 
     <section class="footerVideo">
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.58.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59 (1).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59 (2).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.19.00 (1).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.19.00.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/v1.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/v2.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/v3.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/v5.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/v6.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/v7.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
     </section>
     <br>
     <br>
