@@ -79,3 +79,38 @@
       display: show;
     }
 
+    .contentBottom{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+}
+.contentBottom>.content h1{
+  font-size: 180%;
+}
+.contentBottom>.content h5{
+  font-size: 40%;
+}
+.contentBottom>.content p{
+  font-size: 30%;
+  color: #767171;
+}
+
+.footerVideo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1%;
+}
+.videos{
+   border-radius: 20px;
+   overflow: hidden;
+   position: relative;
+   /* z-index: 1; */
+   width: 20%;
+}
+.videos>video{
+    width: 100%;
+    height: auto;
+    display: block;
+}

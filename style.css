@@ -10,22 +10,6 @@
 .content.art{
   font-size: 250%;
 }
-.contentBottom{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: space-between;
-  align-items: center;
-}
-.contentBottom>.content h1{
-  font-size: 180%;
-}
-.contentBottom>.content h5{
-  font-size: 40%;
-}
-.contentBottom>.content p{
-  font-size: 30%;
-  color: #767171;
-}
     .animate {
       transform: rotateX(90deg);
       transition-duration: 1s;
