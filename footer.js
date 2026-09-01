@@ -1,3 +1,4 @@
+
 let footer = document.createElement("footer");
 
 footer.id = "footer";
@@ -6,8 +7,13 @@ footer.innerHTML = `
     <div class="footerTop">
 
         <div class="footerLeft">
-            <p>NEWS</p>
-            <p>STUDIO NAMMA</p>
+            <p><a href="home.html">HOME</a></p>
+            <p><a href="work.html">WORK</a></p>
+            <p><a href="service.html">SERVICE</a></p>
+            <p><a href="studio.html">STUDIO</a></p>
+            <p><a href="plans.html">PLANS</a></p>
+            <p><a href="approach.html">APPROACH</a></p>
+            <p><a href="news.html">NEWS</a></p>
 
             <br>
 
@@ -48,22 +54,20 @@ footer.innerHTML = `
     </div>
 `;
 
-document.body.append(footer);
+document.body.appendChild(footer);
 
 let nammaText = footer.querySelector(".nammaText");
 
 function animateNamma() {
-    let nammaPosition = nammaText.getBoundingClientRect().top;
-
+    let nammaBox = nammaText.getBoundingClientRect();
     let screenHeight = window.innerHeight;
 
-    if (nammaPosition < screenHeight) {
+    if (nammaBox.top < screenHeight) {
         nammaText.classList.add("showNamma");
-    } else {
-        nammaText.classList.remove("showNamma");
     }
 }
 
 window.addEventListener("scroll", animateNamma);
 
 animateNamma();
+
