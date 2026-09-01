@@ -8,11 +8,16 @@
       font-size: 400%;
     }
 .content.art{
-  height: 140vh;
+  height: 130vh;
   font-size: 250%;
 }
 .content.art>image{
   height: 100px;
+}
+.home > p{
+    font-size: 40%;
+    font-weight: lighter;
+    color: rgb(112, 108, 108);
 }
     .animate {
       transform: rotateX(90deg);
@@ -627,4 +632,15 @@
         text-align: center;
     }
 }
-
+u{
+    text-decoration-thickness: 4px;
+}
+.playground {
+   height: 90vh;
+}
+.play{
+    height: 10vh;
+    padding: 60px;
+    font-weight: lighter;
+    color: rgb(93, 92, 92);
+}
