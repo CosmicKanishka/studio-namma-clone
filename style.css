@@ -644,3 +644,16 @@ u{
     font-weight: lighter;
     color: rgb(93, 92, 92);
 }
+
+.art>div{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* gap: 100px; */
+}
+.art>div>video{
+    display: none;
+}
+.art>div>p{
+    display: none;
+}

@@ -27,17 +27,28 @@ images.forEach((img) => {
     observer2.observe(img);
 });
 
-let list = document.querySelectorAll(".art > h1");
+let list = document.querySelectorAll(".art > div > h1");
 
 list.forEach((element) => {
     element.addEventListener("mouseenter", (event) => {
 
         list.forEach((text) => {
 
-            if (text.innerText == event.target.innerText) {
+            let parentDiv = text.parentElement;
+            let v = parentDiv.querySelector("video");
+            let p = parentDiv.querySelector("p");
+
+            if (text === event.target) {
+
                 text.style.color = "black";
+                v.style.display = "block";
+                p.style.display = "block";
             } else {
+
                 text.style.color = "gray";
+                v.style.display = "none";
+                p.style.display = "none";
+
             }
 
         });
