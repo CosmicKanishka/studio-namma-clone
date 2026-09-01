@@ -8,7 +8,11 @@
       font-size: 400%;
     }
 .content.art{
+  height: 140vh;
   font-size: 250%;
+}
+.content.art>image{
+  height: 100px;
 }
     .animate {
       transform: rotateX(90deg);

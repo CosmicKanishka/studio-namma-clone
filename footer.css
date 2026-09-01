@@ -1,7 +1,7 @@
 
 #footer {
     min-height: 100vh;
-    background: rgb(234, 236, 237);
+    background: rgb(230, 230, 230);
     overflow: hidden;
     position: relative;
     padding: 15px 10px;
@@ -79,7 +79,7 @@
       display: show;
     }
 
-    .contentBottom{
+.contentBottom{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
@@ -94,6 +94,9 @@
 .contentBottom>.content p{
   font-size: 30%;
   color: #767171;
+}
+.b{
+    height: 70vh;
 }
 
 .footerVideo{

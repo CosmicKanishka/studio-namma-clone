@@ -4,16 +4,9 @@ let footer = document.createElement("footer");
 footer.id = "footer";
 
 footer.innerHTML = `
- <section class="footerVideo">
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.58.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59 (1).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59 (2).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.19.00 (1).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.19.00.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
-    </section>
+ 
     <section class="contentBottom">
-      <div class="content">
+      <div class="content b">
         <h1>
           LET'S WORK <br /><img
             src="	https://cdn.prod.website-files.com/679cb9cacf00799…c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp"
@@ -21,7 +14,7 @@ footer.innerHTML = `
           />TOGETHER
         </h1>
       </div>
-      <div class="content" style="display: flex; flex-direction: column; gap: 50px;">
+      <div class="content b" style="display: flex; flex-direction: column; gap: 50px;">
         <h5>
           Work with us if average isn’t your thing. <br />
           Drop it, we'll build it!
@@ -29,6 +22,21 @@ footer.innerHTML = `
         <p>SAY HELLO -></p>
       </div>
     </section>
+
+    <section class="footerVideo">
+      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.58.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59 (1).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59 (2).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.18.59.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.19.00 (1).mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+      <div class="videos"><video src="./media/WhatsApp Video 2026-09-01 at 16.19.00.mp4" autoplay muted loop playsinline width="15%" height="10%" ></video></div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
 
     <div class="footerTop">
 
