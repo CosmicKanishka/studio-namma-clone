@@ -26,7 +26,10 @@ createListElement("NEWS", "news.html");
 
 
   let li1 = document.createElement("li");
-  li1.innerText = "STUDIO NAMMA";
+  let a = document.createElement("a")
+  a.setAttribute("href","home.html")
+  a.innerText = "STUDIO NAMMA";
+  li1.append(a)
 
   let li2 = document.createElement("li");
   li2.innerText = "DARK MODE";
@@ -70,6 +73,8 @@ createListElement("NEWS", "news.html");
       li3.innerText = "OPEN"
     }
   })
+
+  
 
 
 
