@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Studio — Namma</title>
+
+    <link rel="stylesheet" href="./nav.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./footer.css">
+
+    <style>
+
+        /* =========================================
+           STUDIO HERO
+        ========================================= */
+
+        .studioHero {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            padding: 80px 20px 40px;
+        }
+
+        .studioHero h1 {
+            font-size: clamp(70px, 13vw, 190px);
+            line-height: 0.78;
+            font-weight: 900;
+            letter-spacing: -7px;
+            text-align: center;
+        }
+
+        .studioHero p {
+            margin-top: 70px;
+            font-family: monospace;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .studioIntro {
+            min-height: 100vh;
+            padding: 100px 25px;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            align-items: start;
+            background: rgb(228 228 228);
+        }
+
+        .studioLabel {
+            font-family: monospace;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+        .studioIntroText {
+            max-width: 950px;
+        }
+
+        .studioIntroText p {
+            font-size: clamp(28px, 4vw, 58px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 50px;
+        }
+
+
+        /* =========================================
+           STUDIO IMAGE / PLAYGROUND
+        ========================================= */
+
+        .studioPlayground {
+            min-height: 100vh;
+            padding: 100px 25px;
+            overflow: hidden;
+        }
+
+        .studioPlaygroundTitle {
+            min-height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .studioPlaygroundTitle h1 {
+            font-size: clamp(70px, 12vw, 180px);
+            line-height: 0.8;
+            font-weight: 900;
+            letter-spacing: -7px;
+            text-align: center;
+        }
+
+        .studioImages {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            overflow: hidden;
+        }
+
+        .studioImages div {
+            overflow: hidden;
+        }
+
+        .studioImages img {
+            width: 100%;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .studioImages img:hover {
+            transform: scale(1.04);
+        }
+
+        .studioImageLeft {
+            transform: translateX(-45%) rotate(-15deg);
+            transition: transform 1s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .studioImageRight {
+            transform: translateX(45%) rotate(15deg);
+            transition: transform 1s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .studioImageLeft.show,
+        .studioImageRight.show {
+            transform: translateX(0) rotate(0);
+        }
+
+
+        /* =========================================
+           STORY
+        ========================================= */
+
+        .studioStory {
+            min-height: 100vh;
+            padding: 120px 25px;
+            display: grid;
+            grid-template-columns: 30% 70%;
+            background: #e9e9e9;
+        }
+
+        .studioStoryText {
+            max-width: 950px;
+        }
+
+        .studioStoryText p {
+            font-size: clamp(25px, 3.5vw, 52px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 45px;
+        }
+
+        .studioStoryText .strong {
+            font-weight: 700;
+        }
+
+
+        /* =========================================
+           TEAM
+        ========================================= */
+
+        .studioTeam {
+            padding: 120px 25px;
+            background: rgb(228 228 228);
+        }
+
+        .studioTeamHeader {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .studioTeamHeader p {
+            font-family: monospace;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+        .teamGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .teamCard {
+            overflow: hidden;
+        }
+
+        .teamPhoto {
+            width: 100%;
+            aspect-ratio: 1 / 1.15;
+            overflow: hidden;
+            background: #d0d0d0;
+        }
+
+        .teamPhoto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.7s ease;
+        }
+
+        .teamCard:hover .teamPhoto img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .teamInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .teamInfo h3 {
+            font-size: 20px;
+        }
+
+        .teamInfo p {
+            font-family: monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================
+           FUEL / VALUES
+        ========================================= */
+
+        .studioFuel {
+            min-height: 100vh;
+            background: #111;
+            color: white;
+
+            padding: 130px 25px;
+
+            display: grid;
+            grid-template-columns: 45% 55%;
+        }
+
+        .fuelTitle h1 {
+            font-size: clamp(60px, 9vw, 145px);
+            line-height: 0.8;
+            letter-spacing: -7px;
+            margin: 0;
+        }
+
+        .fuelList {
+            width: 100%;
+        }
+
+        .fuelItem {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 20px;
+
+            padding: 45px 0;
+
+            border-top: 1px solid #555;
+
+            opacity: 0;
+            transform: translateY(40px);
+
+            transition:
+                opacity .7s ease,
+                transform .8s cubic-bezier(.16, 1, .3, 1);
+        }
+
+        .fuelItem:last-child {
+            border-bottom: 1px solid #555;
+        }
+
+        .fuelItem.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fuelNumber {
+            font-family: monospace;
+            font-size: 13px;
+            color: #888;
+        }
+
+        .fuelItem h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .fuelItem h2 span {
+            display: block;
+            font-family: monospace;
+            font-size: 12px;
+            font-weight: normal;
+            letter-spacing: 2px;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        .fuelItem p {
+            max-width: 600px;
+            font-size: 17px;
+            line-height: 1.5;
+            color: #aaa;
+        }
+
+
+        /* =========================================
+           FINAL CTA
+        ========================================= */
+
+        .studioCTA {
+            min-height: 90vh;
+            padding: 80px 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            background: #e9e9e9;
+        }
+
+        .studioCTATop {
+            font-family: monospace;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+        .studioCTA h1 {
+            font-size: clamp(70px, 12vw, 180px);
+            line-height: 0.78;
+            letter-spacing: -7px;
+            font-weight: 900;
+        }
+
+        .studioCTABottom {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .studioCTABottom a {
+            font-family: monospace;
+            font-size: 15px;
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .studioHero h1 {
+                font-size: 18vw;
+                letter-spacing: -4px;
+            }
+
+            .studioIntro,
+            .studioStory {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .studioIntroText p,
+            .studioStoryText p {
+                font-size: 30px;
+            }
+
+            .studioPlayground {
+                padding: 80px 15px;
+            }
+
+            .studioImages {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .studioImageLeft,
+            .studioImageRight {
+                transform: translateY(60px);
+            }
+
+            .studioImageLeft.show,
+            .studioImageRight.show {
+                transform: translateY(0);
+            }
+
+            .teamGrid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .studioFuel {
+                grid-template-columns: 1fr;
+                gap: 100px;
+                padding: 100px 20px;
+            }
+
+            .fuelTitle h1 {
+                font-size: 18vw;
+            }
+
+            .fuelItem h2 {
+                font-size: 28px;
+            }
+
+            .studioCTA h1 {
+                font-size: 18vw;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="studioHero">
+
+        <h1 class="animate">
+            BEHIND
+        </h1>
+
+        <h1 class="animate">
+            THE PIXELS
+        </h1>
+
+        <p>
+            SCROLL ↓
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         INTRO
+    ========================================== -->
+
+    <section class="studioIntro">
+
+        <div class="studioLabel">
+            ABOUT
+        </div>
+
+
+        <div class="studioIntroText">
+
+            <p class="animate">
+                NAMMA WAS BORN FROM A COLLECTIVE OF FREELANCERS
+                WHO DECIDED TO COME TOGETHER WITH A SIMPLE IDEA:
+                TO CREATE DIFFERENTLY.
+            </p>
+
+            <p class="animate">
+                WE SHARE THE SAME HIGH STANDARDS, ATTENTION TO
+                DETAIL AND DESIRE TO GO BEYOND SIMPLE
+                ONE-OFF PROJECTS.
+            </p>
+
+            <p class="animate">
+                THAT VISION TURNED INTO A CREATIVE STUDIO BUILT
+                AROUND AMBITIOUS IDEAS AND FLAWLESS EXECUTION.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PLAYGROUND
+    ========================================== -->
+
+    <section class="studioPlayground">
+
+        <div class="studioPlaygroundTitle">
+
+            <h1 class="animate">
+                PLAYGROUND
+            </h1>
+
+        </div>
+
+
+        <div class="studioImages">
+
+            <div>
+                <img
+                    class="studioImageLeft"
+                    src="./media/pic.jpeg"
+                    alt="Namma Studio">
+            </div>
+
+            <div>
+                <img
+                    class="studioImageRight"
+                    src="./media/Screenshot 2026-09-01 145159.png"
+                    alt="Namma Studio">
+            </div>
+
+            <div>
+                <img
+                    class="studioImageLeft"
+                    src="./media/WhatsApp Image 2026-09-01 at 16.18.58.jpeg"
+                    alt="Namma Studio">
+            </div>
+
+            <div>
+                <img
+                    class="studioImageRight"
+                    src="./media/Screenshot 2026-09-01 145159.png"
+                    alt="Namma Studio">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         STORY
+    ========================================== -->
+
+    <section class="studioStory">
+
+        <div class="studioLabel">
+            OUR STORY
+        </div>
+
+
+        <div class="studioStoryText">
+
+            <p class="animate">
+                A DIGITAL LAB WHERE EVERY WEB EXPERIENCE
+                IS DESIGNED TO BE SEEN, FELT AND REMEMBERED.
+            </p>
+
+            <p class="animate">
+                WE DON'T BELIEVE IN "JUST A WEBSITE."
+                EVERY DETAIL MATTERS.
+            </p>
+
+            <p class="animate strong">
+                A BRILLIANT IDEA DESERVES
+                FLAWLESS EXECUTION.
+            </p>
+
+            <p class="animate strong">
+                WE DELIVER PIXEL-PERFECT RESULTS.
+                END OF STORY.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         TEAM
+    ========================================== -->
+
+    <section class="studioTeam">
+
+        <div class="studioTeamHeader">
+
+            <p>
+                THE TEAM
+            </p>
+
+            <p>
+                PEOPLE BEHIND THE PIXELS
+            </p>
+
+        </div>
+
+
+        <div class="teamGrid">
+
+
+            <div class="teamCard">
+
+                <div class="teamPhoto">
+
+                    <img
+                        src="./media/pic.jpeg"
+                        alt="Team member">
+
+                </div>
+
+                <div class="teamInfo">
+
+                    <h3>
+                        CREATIVE
+                    </h3>
+
+                    <p>
+                        DESIGN
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="teamCard">
+
+                <div class="teamPhoto">
+
+                    <img
+                        src="./media/WhatsApp Image 2026-09-01 at 16.18.58.jpeg"
+                        alt="Team member">
+
+                </div>
+
+                <div class="teamInfo">
+
+                    <h3>
+                        DEVELOPMENT
+                    </h3>
+
+                    <p>
+                        WEBFLOW
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="teamCard">
+
+                <div class="teamPhoto">
+
+                    <img
+                        src="./media/Screenshot 2026-09-01 145159.png"
+                        alt="Team member">
+
+                </div>
+
+                <div class="teamInfo">
+
+                    <h3>
+                        STRATEGY
+                    </h3>
+
+                    <p>
+                        BRAND
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FUEL
+    ========================================== -->
+
+    <section class="studioFuel">
+
+
+        <div class="fuelTitle">
+
+            <h1>
+                THE FUEL
+            </h1>
+
+            <h1>
+                BEHIND
+            </h1>
+
+            <h1>
+                THE CRAFT
+            </h1>
+
+        </div>
+
+
+
+        <div class="fuelList">
+
+
+            <div class="fuelItem">
+
+                <div class="fuelNumber">
+                    01
+                </div>
+
+                <div>
+
+                    <h2>
+                        CRAFT
+
+                        <span>
+                            THE ART OF DETAIL
+                        </span>
+                    </h2>
+
+                    <p>
+                        MAKING THINGS LOOK GOOD IS EASY.
+                        MAKING THEM RIGHT IS ANOTHER STORY.
+                        EVERY ELEMENT SERVES A PURPOSE.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fuelItem">
+
+                <div class="fuelNumber">
+                    02
+                </div>
+
+                <div>
+
+                    <h2>
+                        NO-CODE & BEYOND
+
+                        <span>
+                            FASTER. SMOOTHER. NO CODE.
+                        </span>
+                    </h2>
+
+                    <p>
+                        DIGITAL IS OUR PLAYGROUND.
+                        WE COMBINE DESIGN, DEVELOPMENT,
+                        INTERACTION AND ANIMATION TO CREATE
+                        EXPERIENCES THAT FEEL ALIVE.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fuelItem">
+
+                <div class="fuelNumber">
+                    03
+                </div>
+
+                <div>
+
+                    <h2>
+                        BRIGHTNESS
+
+                        <span>
+                            SERIOUS, BUT NOT TOO MUCH
+                        </span>
+                    </h2>
+
+                    <p>
+                        WE AIM HIGH, RESPECT DEADLINES
+                        AND KEEP THE PROCESS CLEAR,
+                        COLLABORATIVE AND ENJOYABLE.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fuelItem">
+
+                <div class="fuelNumber">
+                    04
+                </div>
+
+                <div>
+
+                    <h2>
+                        AGILITY
+
+                        <span>
+                            SPEED IS A MINDSET
+                        </span>
+                    </h2>
+
+                    <p>
+                        THE DIGITAL WORLD MOVES FAST.
+                        WE EXPLORE NEW IDEAS, TEST NEW METHODS
+                        AND CONSTANTLY RETHINK WHAT IS POSSIBLE.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fuelItem">
+
+                <div class="fuelNumber">
+                    05
+                </div>
+
+                <div>
+
+                    <h2>
+                        TRANSPARENCY
+
+                        <span>
+                            NO BULLSHIT
+                        </span>
+                    </h2>
+
+                    <p>
+                        EVERYTHING IS LAID OUT.
+                        WHAT IS HAPPENING, WHO IS DOING IT,
+                        HOW AND WHY.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CTA
+    ========================================== -->
+
+    <section class="studioCTA">
+
+        <div class="studioCTATop">
+            LET'S WORK
+            <br>
+            TOGETHER
+        </div>
+
+
+        <h1 class="animate">
+            WORK WITH US
+            <br>
+            IF AVERAGE
+            <br>
+            ISN'T YOUR THING.
+        </h1>
+
+
+        <div class="studioCTABottom">
+
+            <a href="#">
+                SAY HELLO →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         EXISTING NAVIGATION
+    ========================================== -->
+
+    <script src="./nav.js"></script>
+
+
+    <!-- =========================================
+         STUDIO ANIMATIONS
+    ========================================== -->
+
+    <script>
+
+        /* -----------------------------------------
+           EXISTING ANIMATE SYSTEM
+        ----------------------------------------- */
+
+        let studioTexts =
+            document.querySelectorAll(".animate");
+
+
+        let studioObserver =
+            new IntersectionObserver((entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.15
+            });
+
+
+        studioTexts.forEach((element) => {
+
+            studioObserver.observe(element);
+
+        });
+
+
+
+        /* -----------------------------------------
+           STUDIO IMAGE ANIMATION
+        ----------------------------------------- */
+
+        let studioImages =
+            document.querySelectorAll(
+                ".studioImageLeft, .studioImageRight"
+            );
+
+
+        let imageObserver =
+            new IntersectionObserver((entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.1
+            });
+
+
+        studioImages.forEach((image) => {
+
+            imageObserver.observe(image);
+
+        });
+
+
+
+        /* -----------------------------------------
+           FUEL ANIMATION
+        ----------------------------------------- */
+
+        let fuelItems =
+            document.querySelectorAll(".fuelItem");
+
+
+        let fuelObserver =
+            new IntersectionObserver((entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            }, {
+                threshold: 0.2
+            });
+
+
+        fuelItems.forEach((item) => {
+
+            fuelObserver.observe(item);
+
+        });
+
+    </script>
+
+
+    <!-- =========================================
+         YOUR EXISTING FOOTER
+    ========================================== -->
+
+    <script src="./footer.js"></script>
+
+
+</body>
+
+</html>
