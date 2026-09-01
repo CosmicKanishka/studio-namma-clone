@@ -24,7 +24,9 @@ footer.innerHTML = `
             <p>SITE EN FRANÇAIS</p>
         </div>
 
-        <div class="footerCenter">
+        <div class="footerRight">
+            <p>We are a creative studio based in Paris, Barcelona & London.</p>
+            <p>Big project? Crazy thought? Or just feel like chatting?</p>
             <p>LET'S TALK!</p>
 
             <p class="footerEmail">
@@ -35,11 +37,6 @@ footer.innerHTML = `
                 COPYRIGHT 2025<br>
                 STUDIO NAMMA
             </p>
-        </div>
-
-        <div class="footerRight">
-            <p>MENU</p>
-            <p>LET'S TALK!</p>
         </div>
 
     </div>
@@ -64,6 +61,9 @@ function animateNamma() {
 
     if (nammaBox.top < screenHeight) {
         nammaText.classList.add("showNamma");
+    }
+    else{
+        nammaText.classList.remove("showNamma");
     }
 }
 
