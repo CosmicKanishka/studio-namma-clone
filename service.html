@@ -1,30 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Services</title>
+
     <link rel="stylesheet" href="./nav.css">
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        
+
+        .seperate {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 30px 25px;
+        }
+
+        .left-p {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .right-p {
+            width: 50%;
+            padding-right: 25px;
+        }
+
+        .size {
+            font-size: 35px;
+        }
+
+        .img-class {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 40px 25px;
+        }
+
+        .img-class img {
+            height: 60px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+
+            .seperate {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .left-p,
+            .right-p {
+                width: 100%;
+            }
+
+            .right-p {
+                padding-right: 0;
+            }
+
+            .size {
+                font-size: 25px;
+            }
+
+            .img-class {
+                flex-wrap: wrap;
+                gap: 25px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-     <section class="content">
-    <h1 class="animate">SERIOUS</h1>
-    <h1 class="animate">SKILLS ONLY</h1>
-  </section>
 
-  <section class="content">
-      <p>Creative studio building premium Brands</p>
-      <h2 class="animate">
-        It’s never “just a website.” Every detail matters. We craft digital
-        experiences. Your design. Our obsession. Your brand. Our playground.
-      </h2>
+    <section class="content services-content">
+
+        <h1 class="animate">SERIOUS</h1>
+        <h1 class="animate">SKILLS ONLY</h1>
+
     </section>
 
-    <section class="content">
-      <h1 class="animate">PLAYGROUND</h1>
+    <section class="content services-content">
+
+        <div class="seperate">
+
+            <div class="left-p">
+                <p class="animate size">
+                    LAUNCH. SCALE. REPEAT.
+                </p>
+            </div>
+
+            <div class="right-p">
+                <p class="animate size">
+                    A vision is good. Flawless execution is better. At Namma, we don’t
+                    stack services — we align strengths. Design. Development.
+                    Copywriting. Marketing. À la carte or as a full strategy, everything
+                    moves in one direction: results. Need a bold identity? An
+                    award-winning website? A campaign that makes noise?
+                    We step in where it counts. We shift momentum.
+                    Crafted to be seen. Written to be felt.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="img-class">
+
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68875740f7c110ecadd4b094_Webflow%20logo.avif">
+
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/688758570a911fd133df93d7_ssfigma%20logo%201.avif">
+
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/688764d4993489953bd52f1b_aaChatGPT%20Image%2028%20juil.%202025%2C%2013_48_56%201.avif">
+
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68875b93baab84f03c840632_gsap%20logoo.avif">
+
+        </div>
+
     </section>
+
+    <section class="content services-content">
+
+        <h1 class="animate">CRAFT AND CODE</h1>
+        <h1 class="animate"></h1>
+
+    </section>
+
+   
+
 </body>
-<script src="nav.js"></script>
-<script src="index.js"></script>
+ <script src="nav.js"></script>
+    <script src="index.js"></script>
 </html>
