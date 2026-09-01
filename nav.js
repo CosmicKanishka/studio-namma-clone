@@ -15,7 +15,7 @@ let navbar = document.createElement("ul");
     document.body.append(menu)
   }
 
-createListElement("HOME", "home.html");
+  createListElement("HOME", "home.html");
 createListElement("WORK", "work.html");
 createListElement("STUDIO", "studio.html");
 createListElement("SERVICES", "service.html");
@@ -26,10 +26,7 @@ createListElement("NEWS", "news.html");
 
 
   let li1 = document.createElement("li");
-  let a = document.createElement("a")
-  li1.append(a)
-  a.innerText = "STUDIO NAMMA";
-  a.setAttribute("href","home.html")
+  li1.innerText = "STUDIO NAMMA";
 
   let li2 = document.createElement("li");
   li2.innerText = "DARK MODE";
@@ -62,24 +59,7 @@ createListElement("NEWS", "news.html");
 
   mouseEffect(li3);
   mouseEffect(li4)
-   let cursor = document.getElementById("cursor");
-    let videoCursor = document.getElementById("videoCursor");
 
-    let contents = document.querySelectorAll(".content");
-    contents.forEach((content, index) => {
-      content.addEventListener("mousemove", (event) => {
-        if (index == 0) {
-          videoCursor.style.left = event.clientX + 20 + "px";
-          videoCursor.style.top = event.clientY + 20 + "px";
-          videoCursor.style.display = "block";
-          cursor.style.display = "none";
-        } else {
-          cursor.style.left = `${event.clientX + 20}px`; //it will also work .
-          cursor.style.top = `${event.clientY + 20}px`;
-          videoCursor.style.display = "none";
-          cursor.style.display = "block";
-        }
-      });
   li3.addEventListener("click", ()=>{
     if(li3.innerText == "OPEN"){
       menu.classList.add("show")
@@ -90,7 +70,7 @@ createListElement("NEWS", "news.html");
       li3.innerText = "OPEN"
     }
   })
-    });
+
   navbar.append(li1, li2, li3, li4);
   document.body.append(navbar)
   console.log(navbar);
