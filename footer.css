@@ -81,34 +81,22 @@
 
 
 .nammaText {
-
     margin: 0;
-
     font-size: 29vw;
-
     font-weight: 900;
-
     line-height: 0.75;
-
     letter-spacing: -1vw;
-
     color: #111;
 
-    transform: scaleY(0);
-
+    transform: scaleY(0.01);
     transform-origin: bottom center;
 
-    transition: transform 1s ease-out;
-
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
 
 .nammaText.showNamma {
-
     transform: scaleY(1);
-
 }
-
 
 
 .footerBottom {

@@ -38,19 +38,32 @@ footer.innerHTML = `
 
     </div>
 
-
     <div class="nammaContainer">
         <h1 class="nammaText">NAMMA</h1>
     </div>
 
-
     <div class="footerBottom">
-
         <p>WE CRAFT BOLD DESIGN & CLEAN WEBFLOW.</p>
-
         <p>LOS ANGELES, CA</p>
-
     </div>
 `;
 
 document.body.append(footer);
+
+let nammaText = footer.querySelector(".nammaText");
+
+function animateNamma() {
+    let nammaPosition = nammaText.getBoundingClientRect().top;
+
+    let screenHeight = window.innerHeight;
+
+    if (nammaPosition < screenHeight) {
+        nammaText.classList.add("showNamma");
+    } else {
+        nammaText.classList.remove("showNamma");
+    }
+}
+
+window.addEventListener("scroll", animateNamma);
+
+animateNamma();
