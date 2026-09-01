@@ -9,8 +9,8 @@ footer.innerHTML = `
       <div class="content b">
         <h1>
           LET'S WORK <br /><img
-            src="	https://cdn.prod.website-files.com/679cb9cacf00799…c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp"
-            alt=""
+            src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp"
+            alt="" style="width: 150px; margin-right: 10px; margin-top: 30px"
           />TOGETHER
         </h1>
       </div>
@@ -36,7 +36,7 @@ footer.innerHTML = `
     <br>
     <br>
     <br>
-    
+
 
     <div class="footerTop">
 
