@@ -73,3 +73,9 @@
     color: #767171;
 }
 
+.content>img{
+      height: 100%;
+      width: 100%;
+      display: show;
+    }
+
