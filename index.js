@@ -1,4 +1,4 @@
- let texts = document.querySelectorAll(".content > .animate");
+ let texts = document.querySelectorAll(".animate");
     console.log(texts);
 
     let observer = new IntersectionObserver((entries) => {
