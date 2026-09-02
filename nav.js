@@ -136,19 +136,19 @@ contactPage.innerHTML = `
 
 document.body.append(contactPage);
 
-// Select interest buttons
+
 let interestButtons = contactPage.querySelectorAll(".interestButtons button");
 
 interestButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
 
-        // Remove active class from all buttons
+        
         interestButtons.forEach((btn) => {
             btn.classList.remove("selected");
         });
 
-        // Add active class to clicked button
+        
         button.classList.add("selected");
 
     });
@@ -162,7 +162,7 @@ li4.addEventListener("click", () => {
 });
 
 
-// Close contact page
+
 document.getElementById("closeContact").addEventListener("click", () => {
 
     contactPage.classList.remove("showContact");
