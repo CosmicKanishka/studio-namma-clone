@@ -15,7 +15,7 @@ let navbar = document.createElement("ul");
     document.body.append(menu)
   }
 
-createListElement("HOME", "home.html");
+createListElement("HOME", "index.html");
 createListElement("WORK", "work.html");
 createListElement("STUDIO", "studio.html");
 createListElement("SERVICES", "service.html");
@@ -27,7 +27,7 @@ createListElement("NEWS", "news.html");
 
   let li1 = document.createElement("li");
   let a = document.createElement("a")
-  a.setAttribute("href","home.html")
+  a.setAttribute("href","index.html")
   a.innerText = "STUDIO NAMMA";
   li1.append(a)
 

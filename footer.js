@@ -41,7 +41,7 @@ footer.innerHTML = `
     <div class="footerTop">
 
         <div class="footerLeft">
-            <p><a href="home.html">HOME</a></p>
+            <p><a href="index.html">HOME</a></p>
             <p><a href="work.html">WORK</a></p>
             <p><a href="service.html">SERVICE</a></p>
             <p><a href="studio.html">STUDIO</a></p>
