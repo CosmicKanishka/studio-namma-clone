@@ -1,1 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Sprints to Premium Subscriptions | Studio Namma</title>
 
+    <link href="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/css/studio-namma-2025.webflow.shared.06e1cf8fd.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css">
+
+    
+    <link rel="stylesheet" href="plans.css">
+
+    <!-- GSAP Suite & Plugins -->
+    <script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.prod.website-files.com/gsap/3.15.0/CustomEase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
+</head>
+<body data-page="packs">
+
+    <div class="custom-cursor" id="customCursor"></div>
+
+    
+    <nav class="nav-top">
+        <div class="padding-global">
+            <div class="container-nav">
+                <div class="nav-top_component">
+                    <div class="nav-top_left">
+                        <div class="nav-top_left_1">
+                            <a href="/" class="link is-mono w-inline-block">
+                                <div class="link_first"><div class="text-mono difference">Studio Namma</div></div>
+                                <div class="link_second"><div class="text-mono difference">Studio Namma</div></div>
+                            </a>
+                        </div>
+                        <div class="nav-top_left_3 hide-mobile-landscape">
+                            <div id="modeSwitch" class="link is-mono" role="button" tabindex="0">
+                                <div class="link_first"><div class="text-mono difference">Dark mode</div></div>
+                                <div class="link_second"><div class="text-mono difference">Dark mode</div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-top_middle has-cart">
+                        <div id="menuToggle" class="link is-mono" role="button" tabindex="0">
+                            <div class="link_first"><div class="text-mono difference">Menu</div></div>
+                            <div class="link_second"><div class="text-mono difference">Open</div></div>
+                        </div>
+                    </div>
+                    <div class="nav-top_right hide-mobile-landscape">
+                        <a href="mailto:hello@studionamma.com" class="link is-mono">
+                            <div class="link_first"><div class="text-mono difference">Let's talk!</div></div>
+                            <div class="link_second"><div class="text-mono difference">Contact us</div></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Persistent City Time Ticker -->
+    <nav class="nav-bottom">
+        <div class="padding-global is-nav">
+            <div class="container-nav">
+                <div class="nav-bottom_component">
+                    <div class="hide-tablet">
+                        <div class="text-mono difference">We craft bold design &amp; clean Webflow.</div>
+                    </div>
+                    <div class="nav-bottom_right">
+                        <div class="cities_list">
+                            <div class="city_wrapper">
+                                <div id="citySwitch1" class="text-mono difference">Paris, France</div>
+                                <div id="timeSwitch1" class="text-mono difference">--:--:--</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fullscreen Curtain Navigation Overlay -->
+    <section class="nav-menu" id="navMenuOverlay">
+        <div class="padding-global" style="width: 100%;">
+            <div class="container-nav">
+                <div class="nav-menu_component">
+                    <div class="nav-menu_col">
+                        <a href="/" class="nav-menu_link_wrapper w-inline-block"><div class="nav-menu_link">Home</div></a>
+                        <a href="/work" class="nav-menu_link_wrapper w-inline-block"><div class="nav-menu_link">Work</div></a>
+                        <a href="/services" class="nav-menu_link_wrapper w-inline-block"><div class="nav-menu_link">Services</div></a>
+                        <a href="/approach" class="nav-menu_link_wrapper w-inline-block"><div class="nav-menu_link">Approach</div></a>
+                    </div>
+                    <div class="nav-menu_col">
+                        <a href="/studio" class="nav-menu_link_wrapper w-inline-block"><div class="nav-menu_link">Studio</div></a>
+                        <a href="/plans" aria-current="page" class="nav-menu_link_wrapper w-inline-block w--current"><div class="nav-menu_link">Plans</div></a>
+                        <a href="/news" class="nav-menu_link_wrapper w-inline-block"><div class="nav-menu_link">News</div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Page Wrapper -->
+    <div class="page-wrapper">
+        <main id="smooth-wrapper" class="page-main">
+            <div id="smooth-content" class="main-wrapper">
+
+                <!-- 1. Hero: THE PERFECT PLAN -->
+                <section class="section_hero">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="hero_component">
+                                <div class="max-width-xxxlarge">
+                                    <div class="heading-appear">
+                                        <h1 class="text-align-center"><strong>The Perfect<br/>Plan</strong></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. Intro -->
+                <section class="section_intro">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="intro_component">
+                                <div class="text-mono_wrapper">
+                                    <h2 class="text-mono">Sharp. Flexible. Effective.</h2>
+                                </div>
+                                <div class="text-appear">
+                                    <p class="intro_description">Our offers? Like a Lego set for serious adults: precise, modular, and free of useless instructions. From fast-turnaround projects to full-scale redesigns, we adapt to your real needs, not the other way around. We don’t sell packages. We solve problems. Flexible, agile, and attentive, we deliver effective solutions that actually work. As simple as that.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Packs: Masterpiece Sprint Unlimited -->
+                <section class="section_packs">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="packs_component">
+                                <div>
+                                    <h2 class="line-appear">Masterpiece<br><span class="cta_visual is-pack"></span>Sprint<br>unlimited</h2>
+                                </div>
+                                <div class="text-mono_wrapper" style="margin-top: 40px;">
+                                    <h3 class="text-mono">services packed (3)</h3>
+                                </div>
+
+                                <div id="servicesContent" class="services_content">
+                                    <div class="text-mono_sticky is-half">
+                                        <div class="packs_words">
+                                            <div class="text-mono">Masterpiece</div>
+                                            <div class="text-mono">Sprint</div>
+                                            <div class="text-mono">Unlimited</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="packs_list">
+                                        <!-- Pack 1 -->
+                                        <div class="packs_item is-first">
+                                            <div class="line-appear"><h3 class="heading-style-h3">All-in-one</h3></div>
+                                            <div class="packs_description_wrapper">
+                                                <div class="text-appear">
+                                                    <div class="max-width-plan">
+                                                        <p>The all-in-one formula for a website built to last. From scratch to launch, we handle it all. Branding, design, Webflow development: take it all, or just what you need. From flawless Figma integrations to full rebuilds, we deliver with precision. The result? A masterpiece, signed Namma.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="skills_list">
+                                                    <div class="text-mono_wrapper"><div class="text-mono">BRANDING</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">UI/UX Design</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Webflow Development</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Redesign</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Pixel-perfect</div></div>
+                                                </div>
+                                            </div>
+                                            <div data-cursor-hover="Let's talk" class="small-link">
+                                                <div class="text-mono_wrapper"><div class="text-mono">From 2,800 € &rarr;</div></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Pack 2 -->
+                                        <div class="packs_item is-second">
+                                            <div class="line-appear"><h3 class="heading-style-h3">Daily pass</h3></div>
+                                            <div class="packs_description_wrapper">
+                                                <div class="text-appear">
+                                                    <div class="max-width-plan">
+                                                        <p>A clear brief, a tight deadline? Our daily rate puts all our energy into your priorities. Web design or Webflow integration— you decide. Think of it as a creative sprint: book a day, or as many as you need. Fast, flexible, no strings attached.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="skills_list">
+                                                    <div class="text-mono_wrapper"><div class="text-mono">UI/UX design</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Webflow Development</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">landing page</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Figma prototype</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">SEO content</div></div>
+                                                </div>
+                                            </div>
+                                            <div data-cursor-hover="Let's talk" class="small-link">
+                                                <div class="text-mono_wrapper"><div class="text-mono">From €650 &rarr;</div></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Pack 3 -->
+                                        <div class="packs_item is-third">
+                                            <div class="line-appear"><h3 class="heading-style-h3">Premium subscription</h3></div>
+                                            <div class="packs_description_wrapper">
+                                                <div class="text-appear">
+                                                    <div class="max-width-plan">
+                                                        <p>Your team, fully extended. A premium subscription unlocking access to all our expertise: design, development, content. Unlimited requests, handled with priority and maximum responsiveness. The ideal formula for scaleups and fast-growing companies that need continuous support and a partner always by their side.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="skills_list">
+                                                    <div class="text-mono_wrapper"><div class="text-mono">long-term support</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Fast turnaround</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Unlimited projects</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Unlimited revisions</div></div>
+                                                    <div class="text-mono_wrapper"><div class="text-mono">Dedicated client manager</div></div>
+                                                </div>
+                                            </div>
+                                            <div data-cursor-hover="Let's talk" class="small-link">
+                                                <div class="text-mono_wrapper"><div class="text-mono">From €4,990/month &rarr;</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. Smart Packs (We Build You Launch) -->
+                <section class="section_smart">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="smart_component">
+                                <div>
+                                    <h2 class="line-appear"><span class="cta_visual is-pack2"></span>We build<br>you launch</h2>
+                                </div>
+                                <div class="smart_content">
+                                    <div class="text-mono_sticky"><div class="text-mono_wrapper"><div class="text-mono no-shrink">smart pack</div></div></div>
+                                    <div class="smart_list">
+                                        <div class="smart_item">
+                                            <div class="line-appear"><h3 class="heading-style-h3">Expand your team</h3></div>
+                                            <div class="text-appear"><p>Reinforce your team with our Webflow developers, brand designers, copywriters and 3D experts. We bring the extra skills you don’t have in-house, so every project moves faster, stays sharper, and hits a higher standard.</p></div>
+                                        </div>
+                                        <div class="smart_item">
+                                            <div class="line-appear"><h3 class="heading-style-h3">Total flexibility</h3></div>
+                                            <div class="text-appear"><p>No two projects move the same way. That’s why our offers adapt: one day, one month, or more—depending on what you need. We scale our resources to your priorities, always with the same level of precision and care.</p></div>
+                                        </div>
+                                        <div class="smart_item">
+                                            <div class="line-appear"><h3 class="heading-style-h3">Respected deadlines</h3></div>
+                                            <div class="text-appear"><p>A project well managed is a project delivered on time. We structure every step to move fast without sacrificing quality. The result: deliverables ready when promised, meeting your standards. Without stress. Without delays.</p></div>
+                                        </div>
+                                        <div class="smart_item">
+                                            <div class="line-appear"><h3 class="heading-style-h3">Tailor-made training</h3></div>
+                                            <div class="text-appear"><p>We close every project with clear, structured training. The goal: to ensure a smooth, confident transition and give you full autonomy to manage Webflow and your CMS with ease.</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. Footer with Exact Vector SVG Kinetic Stretch -->
+                <footer class="footer">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="footer_component">
+                                <div class="footer_content">
+                                    <div class="footer_main">
+                                        <div class="footer_menu">
+                                            <div class="footer_menu_col"><div class="text-mono">We are a creative studio based in Paris, Barcelona &amp; London.</div></div>
+                                            <div class="footer_menu_col"><div class="text-mono">Big project? Crazy thought? Or just feel like chatting?</div></div>
+                                            <div class="footer_menu_col"><div class="text-mono">Let's talk!</div></div>
+                                            <div class="footer_menu_col"><a href="mailto:hello@studionamma.com" class="link is-mono-footer"><div class="text-mono">hello@studionamma.com</div></a></div>
+                                            <div class="footer_menu_col"><div class="text-mono">Copyright 2026 Studio Namma</div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer_logo_wrapper">
+                                    <div class="footer_logo_fill">
+                                        <div class="logo-instance">
+                                            <svg class="footer_logo" width="100%" height="100%" viewBox="0 0 1472 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0H121.01L186.954 393.455H189.673L173.357 200.465L166.559 0H256.297V475H135.286L71.3823 78.8269H69.3428L82.2596 274.535L89.7378 475H0V0Z" fill="currentColor"/>
+                                                <path d="M268.04 475L322.426 0H450.914L508.02 475H416.243L408.085 363.555H365.935L357.777 475H268.04ZM367.975 279.292H405.366L387.69 72.0315H384.971L367.975 279.292Z" fill="currentColor"/>
+                                                <path d="M519.832 475V0H659.198L678.233 200.465L689.79 383.941H691.83L702.707 200.465L721.742 0H861.108V475H771.37L774.769 262.983L783.607 78.8269H781.567L738.058 475H640.162L596.653 78.8269H593.934L602.772 262.983L606.851 475H519.832Z" fill="currentColor"/>
+                                                <path d="M879.665 475V0H1019.03L1038.07 200.465L1049.62 383.941H1051.66L1062.54 200.465L1081.57 0H1220.94V475H1131.2L1134.6 262.983L1143.44 78.8269H1141.4L1097.89 475H999.995L956.486 78.8269H953.767L962.604 262.983L966.683 475H879.665Z" fill="currentColor"/>
+                                                <path d="M1232.02 475L1286.41 0H1414.89L1472 475H1380.22L1372.06 363.555H1329.92L1321.76 475H1232.02ZM1331.95 279.292H1369.35L1351.67 72.0315H1348.95L1331.95 279.292Z" fill="currentColor"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="footer_logo_stretch">
+                                        <div class="logo-instance" id="stretchLogoInstance">
+                                            <svg class="footer_logo_stretch" width="100%" height="100%" viewBox="0 0 1472 475" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0H121.01L186.954 393.455H189.673L173.357 200.465L166.559 0H256.297V475H135.286L71.3823 78.8269H69.3428L82.2596 274.535L89.7378 475H0V0Z" fill="currentColor"/>
+                                                <path d="M268.04 475L322.426 0H450.914L508.02 475H416.243L408.085 363.555H365.935L357.777 475H268.04ZM367.975 279.292H405.366L387.69 72.0315H384.971L367.975 279.292Z" fill="currentColor"/>
+                                                <path d="M519.832 475V0H659.198L678.233 200.465L689.79 383.941H691.83L702.707 200.465L721.742 0H861.108V475H771.37L774.769 262.983L783.607 78.8269H781.567L738.058 475H640.162L596.653 78.8269H593.934L602.772 262.983L606.851 475H519.832Z" fill="currentColor"/>
+                                                <path d="M879.665 475V0H1019.03L1038.07 200.465L1049.62 383.941H1051.66L1062.54 200.465L1081.57 0H1220.94V475H1131.2L1134.6 262.983L1143.44 78.8269H1141.4L1097.89 475H999.995L956.486 78.8269H953.767L962.604 262.983L966.683 475H879.665Z" fill="currentColor"/>
+                                                <path d="M1232.02 475L1286.41 0H1414.89L1472 475H1380.22L1372.06 363.555H1329.92L1321.76 475H1232.02ZM1331.95 279.292H1369.35L1351.67 72.0315H1348.95L1331.95 279.292Z" fill="currentColor"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- External Script Execution -->
+    <script src="plans.js"></script>
+</body>
+</html>
