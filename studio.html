@@ -1,915 +1,609 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Studio — Namma</title>
-
-    <link rel="stylesheet" href="./nav.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./footer.css">
-
-    <style>
-        .studioHero {
-            min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            padding: 80px 20px 40px;
-        }
-
-        .studioHero h1 {
-            font-size: clamp(70px, 13vw, 190px);
-            line-height: 0.78;
-            font-weight: 900;
-            letter-spacing: -7px;
-            text-align: center;
-        }
-
-        .studioHero p {
-            margin-top: 70px;
-            font-family: monospace;
-            font-size: 14px;
-            letter-spacing: 4px;
-        }
-        .studioIntro {
-            min-height: 100vh;
-            padding: 100px 25px;
-            display: grid;
-            grid-template-columns: 30% 70%;
-            align-items: start;
-            background: rgb(228 228 228);
-        }
-
-        .studioLabel {
-            font-family: monospace;
-            font-size: 14px;
-            letter-spacing: 4px;
-        }
-
-        .studioIntroText {
-            max-width: 950px;
-        }
-
-        .studioIntroText p {
-            font-size: clamp(28px, 4vw, 58px);
-            line-height: 1.05;
-            letter-spacing: -2px;
-            margin-bottom: 50px;
-        }
-
-        .studioPlayground {
-            min-height: 100vh;
-            padding: 100px 25px;
-            overflow: hidden;
-        }
-
-        .studioPlaygroundTitle {
-            min-height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .studioPlaygroundTitle h1 {
-            font-size: clamp(70px, 12vw, 180px);
-            line-height: 0.8;
-            font-weight: 900;
-            letter-spacing: -7px;
-            text-align: center;
-        }
-
-        .studioImages {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            overflow: hidden;
-        }
-
-        .studioImages div {
-            overflow: hidden;
-        }
-
-        .studioImages img {
-            width: 100%;
-            display: block;
-            transition: transform 0.8s ease;
-        }
-
-        .studioImages img:hover {
-            transform: scale(1.04);
-        }
-
-        .studioImageLeft {
-            transform: translateX(-45%) rotate(-15deg);
-            transition: transform 1s cubic-bezier(.16, 1, .3, 1);
-        }
-
-        .studioImageRight {
-            transform: translateX(45%) rotate(15deg);
-            transition: transform 1s cubic-bezier(.16, 1, .3, 1);
-        }
-
-        .studioImageLeft.show,
-        .studioImageRight.show {
-            transform: translateX(0) rotate(0);
-        }
-        .studioStory {
-            min-height: 100vh;
-            padding: 120px 25px;
-            display: grid;
-            grid-template-columns: 30% 70%;
-            background: #e9e9e9;
-        }
-
-        .studioStoryText {
-            max-width: 950px;
-        }
-
-        .studioStoryText p {
-            font-size: clamp(25px, 3.5vw, 52px);
-            line-height: 1.08;
-            letter-spacing: -2px;
-            margin-bottom: 45px;
-        }
-
-        .studioStoryText .strong {
-            font-weight: 700;
-        }
-
-
-
-        .studioTeam {
-            padding: 120px 25px;
-            background: rgb(228 228 228);
-        }
-
-        .studioTeamHeader {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 60px;
-        }
-
-        .studioTeamHeader p {
-            font-family: monospace;
-            font-size: 14px;
-            letter-spacing: 4px;
-        }
-
-        .teamGrid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .teamCard {
-            overflow: hidden;
-        }
-
-        .teamPhoto {
-            width: 100%;
-            aspect-ratio: 1 / 1.15;
-            overflow: hidden;
-            background: #d0d0d0;
-        }
-
-        .teamPhoto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: 0.7s ease;
-        }
-
-        .teamCard:hover .teamPhoto img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
-
-        .teamInfo {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .teamInfo h3 {
-            font-size: 20px;
-        }
-
-        .teamInfo p {
-            font-family: monospace;
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
-
-        .studioFuel {
-            min-height: 100vh;
-            background: #111;
-            color: white;
-
-            padding: 130px 25px;
-
-            display: grid;
-            grid-template-columns: 45% 55%;
-        }
-
-        .fuelTitle h1 {
-            font-size: clamp(60px, 9vw, 145px);
-            line-height: 0.8;
-            letter-spacing: -7px;
-            margin: 0;
-        }
-
-        .fuelList {
-            width: 100%;
-        }
-
-        .fuelItem {
-            display: grid;
-            grid-template-columns: 50px 1fr;
-            gap: 20px;
-
-            padding: 45px 0;
-
-            border-top: 1px solid #555;
-
-            opacity: 0;
-            transform: translateY(40px);
-
-            transition:
-                opacity .7s ease,
-                transform .8s cubic-bezier(.16, 1, .3, 1);
-        }
-
-        .fuelItem:last-child {
-            border-bottom: 1px solid #555;
-        }
-
-        .fuelItem.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fuelNumber {
-            font-family: monospace;
-            font-size: 13px;
-            color: #888;
-        }
-
-        .fuelItem h2 {
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        .fuelItem h2 span {
-            display: block;
-            font-family: monospace;
-            font-size: 12px;
-            font-weight: normal;
-            letter-spacing: 2px;
-            color: #888;
-            margin-top: 8px;
-        }
-
-        .fuelItem p {
-            max-width: 600px;
-            font-size: 17px;
-            line-height: 1.5;
-            color: #aaa;
-        }
-
-
-        .studioCTA {
-            min-height: 90vh;
-            padding: 80px 25px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            background: #e9e9e9;
-        }
-
-        .studioCTATop {
-            font-family: monospace;
-            font-size: 14px;
-            letter-spacing: 4px;
-        }
-
-        .studioCTA h1 {
-            font-size: clamp(70px, 12vw, 180px);
-            line-height: 0.78;
-            letter-spacing: -7px;
-            font-weight: 900;
-        }
-
-        .studioCTABottom {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .studioCTABottom a {
-            font-family: monospace;
-            font-size: 15px;
-            letter-spacing: 3px;
-        }
-
-        @media (max-width: 768px) {
-
-            .studioHero h1 {
-                font-size: 18vw;
-                letter-spacing: -4px;
-            }
-
-            .studioIntro,
-            .studioStory {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .studioIntroText p,
-            .studioStoryText p {
-                font-size: 30px;
-            }
-
-            .studioPlayground {
-                padding: 80px 15px;
-            }
-
-            .studioImages {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .studioImageLeft,
-            .studioImageRight {
-                transform: translateY(60px);
-            }
-
-            .studioImageLeft.show,
-            .studioImageRight.show {
-                transform: translateY(0);
-            }
-
-            .teamGrid {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .studioFuel {
-                grid-template-columns: 1fr;
-                gap: 100px;
-                padding: 100px 20px;
-            }
-
-            .fuelTitle h1 {
-                font-size: 18vw;
-            }
-
-            .fuelItem h2 {
-                font-size: 28px;
-            }
-
-            .studioCTA h1 {
-                font-size: 18vw;
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio — Studio Namma</title>
+
+  <!-- USE THE PROJECT'S EXISTING NAVBAR + FOOTER STYLES -->
+  <link rel="stylesheet" href="./nav.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./footer.css">
+
+  <style>
+    /* ============================================================
+       STUDIO NAMMA — HIGH FIDELITY STUDIO PAGE
+       IMPORTANT: navbar/nav.js and footer/footer.js are NOT replaced.
+       This file only builds the studio-page content and its animation.
+       ============================================================ */
+
+    :root {
+      --studio-bg: rgb(228 228 228);
+      --studio-ink: #080808;
+      --studio-blue: #1722ff;
+      --studio-muted: #777;
+      --studio-pad: clamp(16px, 1.45vw, 28px);
+      --studio-ease: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body.studio-page {
+      margin: 0;
+      background: var(--studio-bg);
+      color: var(--studio-ink);
+      overflow-x: hidden;
+    }
+
+    body.studio-page main {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ------------------------------------------------------------
+       EXISTING NAVBAR — same #navbar generated by nav.js
+       Only visual overrides are applied so it sits closer to target.
+       ------------------------------------------------------------ */
+   
+   
+
+  
+    
+    /* ------------------------------------------------------------
+       HERO
+       ------------------------------------------------------------ */
+    .studio-hero {
+      min-height: 100svh;
+      height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .studio-hero-title {
+      width: 100%;
+      padding: 0 var(--studio-pad);
+      text-align: center;
+      perspective: 900px;
+    }
+
+    .studio-hero-line {
+      display: block;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(76px, 12.5vw, 240px);
+      line-height: .78;
+      font-weight: 900;
+      letter-spacing: -.078em;
+      white-space: nowrap;
+    }
+
+    .studio-hero-char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(115%) rotateX(-90deg);
+      transform-origin: 50% 100%;
+    }
+
+    .studio-hero.is-ready .studio-hero-char {
+      animation: studioHeroChar 1.05s var(--studio-ease) forwards;
+      animation-delay: calc(var(--char-index) * 42ms);
+    }
+
+    @keyframes studioHeroChar {
+      to { opacity: 1; transform: translateY(0) rotateX(0); }
+    }
+
+    .studio-scroll-note {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%);
+      font-family: "Courier New", Courier, monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+      animation: studioScrollPulse 1.9s ease-in-out infinite;
+    }
+
+    @keyframes studioScrollPulse {
+      50% { transform: translate(-50%, 5px); }
+    }
+
+    /* The blue dot follows the pointer, like the supplied design. */
+    .studio-cursor {
+      position: fixed;
+      z-index: 1300;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--studio-blue);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .2s ease;
+      mix-blend-mode: multiply;
+    }
+
+    /* ------------------------------------------------------------
+       ABOUT
+       ------------------------------------------------------------ */
+    .studio-about {
+      min-height: 82vh;
+      padding: 14vh var(--studio-pad) 12vh;
+      display: grid;
+      grid-template-columns: 18% 1fr;
+      column-gap: 7vw;
+      align-items: start;
+    }
+
+    .studio-eyebrow {
+      padding-top: 5px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1.7px;
+      text-transform: uppercase;
+    }
+
+    .studio-about-copy {
+      max-width: 930px;
+      margin-left: auto;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(23px, 2.25vw, 35px);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -.035em;
+    }
+
+    .studio-about-copy p { margin: 0 0 26px; }
+    .studio-about-copy p:last-child { margin-bottom: 0; }
+
+    /* ------------------------------------------------------------
+       TEAM — NO OVERLAPPING GALLERY.
+       Three images enter one after another in a clean row.
+       ------------------------------------------------------------ */
+    .studio-team {
+      padding: 7vh var(--studio-pad) 19vh;
+    }
+
+    .studio-team-grid {
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(16px, 2.8vw, 48px);
+      align-items: start;
+    }
+
+    .studio-team-card {
+      opacity: 0;
+      transform: translateY(90px);
+      transition: opacity .9s var(--studio-ease), transform 1.05s var(--studio-ease);
+      will-change: opacity, transform;
+    }
+
+    .studio-team-card:nth-child(2) { margin-top: 8vh; }
+    .studio-team-card:nth-child(3) { margin-top: 16vh; }
+
+    .studio-team-card.is-visible { opacity: 1; transform: translateY(0); }
+
+    .studio-team-image {
+      width: 100%;
+      aspect-ratio: 1 / 1.13;
+      overflow: hidden;
+      background: #d2d2d2;
+    }
+
+    .studio-team-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.035);
+      transition: transform 1.1s var(--studio-ease);
+    }
+
+    .studio-team-card:hover .studio-team-image img { transform: scale(1); }
+
+    .studio-team-name {
+      margin-top: 11px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    /* ------------------------------------------------------------
+       FUEL / CRAFT
+       ------------------------------------------------------------ */
+    .studio-fuel {
+      padding: 5vh var(--studio-pad) 18vh;
+    }
+
+    .studio-fuel-heading {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .studio-fuel-heading h2 {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(78px, 12.2vw, 215px);
+      font-weight: 900;
+      line-height: .77;
+      letter-spacing: -.08em;
+      text-align: left;
+    }
+
+    .studio-fuel-line { display: block; }
+
+    .studio-inline-image {
+      display: inline-block;
+      width: .72em;
+      height: .43em;
+      margin: 0 .035em;
+      vertical-align: .03em;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .studio-inline-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ------------------------------------------------------------
+       VALUES — same editorial three-column structure.
+       ------------------------------------------------------------ */
+    .studio-values { margin-top: 3vh; }
+
+    .studio-value {
+      display: grid;
+      grid-template-columns: 17% 29% 1fr;
+      column-gap: 4vw;
+      padding: 11vh 0 12vh;
+      opacity: 0;
+      transform: translateY(70px);
+      transition: opacity .95s var(--studio-ease), transform 1s var(--studio-ease);
+    }
+
+    .studio-value + .studio-value { border-top: 1px solid rgba(0,0,0,.08); }
+    .studio-value.is-visible { opacity: 1; transform: none; }
+
+    .studio-value-label {
+      padding-top: 7px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .studio-value-title {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(44px, 4.25vw, 76px);
+      font-weight: 900;
+      line-height: .84;
+      letter-spacing: -.06em;
+    }
+
+    .studio-value-copy {
+      max-width: 700px;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(18px, 1.35vw, 23px);
+      font-weight: 600;
+      line-height: 1.24;
+      letter-spacing: -.015em;
+    }
+
+    /* ------------------------------------------------------------
+       EXISTING FOOTER JS is loaded below. Do not create another footer.
+       Small compatibility fixes keep the supplied footer inside the page.
+       ------------------------------------------------------------ */
+    body.studio-page #footer {
+      z-index: 1;
+    }
+
+    body.studio-page #footer .contentBottom h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      letter-spacing: -.06em;
+    }
+
+    body.studio-page #footer .footerTop,
+    body.studio-page #footer .footerBottom,
+    body.studio-page #footer .contentBottom {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ------------------------------------------------------------
+       REDUCED MOTION
+       ------------------------------------------------------------ */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* ------------------------------------------------------------
+       MOBILE
+       ------------------------------------------------------------ */
+    @media (max-width: 800px) {
+      body.studio-page #navbar {
+        grid-template-columns: 1fr auto 1fr;
+        height: 58px;
+      }
+      body.studio-page #navbar li:nth-child(2) { display: none; }
+      body.studio-page #navbar li:nth-child(3) { justify-self: center; }
+      body.studio-page #navbar li:nth-child(4) { justify-self: end; }
+
+      body.studio-page #menu {
+        grid-template-columns: 1fr;
+        padding-top: 75px;
+      }
+      body.studio-page #menu > li { font-size: 17vw; }
+
+      .studio-hero-line { font-size: 20vw; }
+
+      .studio-about {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        row-gap: 35px;
+        padding-top: 11vh;
+      }
+      .studio-about-copy { margin: 0; font-size: 7vw; }
+
+      .studio-team { padding-bottom: 11vh; }
+      .studio-team-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+      }
+      .studio-team-card:nth-child(2),
+      .studio-team-card:nth-child(3) { margin-top: 0; }
+
+      .studio-fuel { padding-top: 3vh; }
+      .studio-fuel-heading {
+        min-height: 55vh;
+        justify-content: flex-start;
+      }
+      .studio-fuel-heading h2 { font-size: 18vw; }
+
+      .studio-value {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        padding: 9vh 0;
+      }
+      .studio-value-title { font-size: 13vw; }
+      .studio-value-copy { font-size: 19px; }
+
+      body.studio-page #footer .contentBottom {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (pointer: coarse) {
+      .studio-cursor { display: none; }
+    }
+  </style>
 </head>
 
+<body class="studio-page">
+  <div class="studio-cursor" id="studioCursor" aria-hidden="true"></div>
 
-<body>
-
-    <section class="studioHero">
-
-        <h1 class="animate">
-            BEHIND
-        </h1>
-
-        <h1 class="animate">
-            THE PIXELS
-        </h1>
-
-        <p>
-            SCROLL ↓
-        </p>
-
+  <main>
+    <!-- ==========================================================
+         HERO
+         ========================================================== -->
+    <section class="studio-hero" id="studio-top">
+      <div class="studio-hero-title" aria-label="Behind the Pixels">
+        <div class="studio-hero-line" data-text="BEHIND"></div>
+        <div class="studio-hero-line" data-text="THE PIXELS"></div>
+      </div>
+      <div class="studio-scroll-note">SCROLL ↓</div>
     </section>
 
-    <section class="studioIntro">
-
-        <div class="studioLabel">
-            ABOUT
-        </div>
-
-
-        <div class="studioIntroText">
-
-            <p class="animate">
-                NAMMA WAS BORN FROM A COLLECTIVE OF FREELANCERS
-                WHO DECIDED TO COME TOGETHER WITH A SIMPLE IDEA:
-                TO CREATE DIFFERENTLY.
-            </p>
-
-            <p class="animate">
-                WE SHARE THE SAME HIGH STANDARDS, ATTENTION TO
-                DETAIL AND DESIRE TO GO BEYOND SIMPLE
-                ONE-OFF PROJECTS.
-            </p>
-
-            <p class="animate">
-                THAT VISION TURNED INTO A CREATIVE STUDIO BUILT
-                AROUND AMBITIOUS IDEAS AND FLAWLESS EXECUTION.
-            </p>
-
-        </div>
-
+    <!-- ==========================================================
+         ABOUT
+         ========================================================== -->
+    <section class="studio-about">
+      <div class="studio-eyebrow">ABOUT</div>
+      <div class="studio-about-copy studio-reveal">
+        <p>Namma was born in 2021, driven by a collective of freelancers who decided to come together with a simple idea: to create differently. We shared the same high standards, attention to detail, and desire to go beyond simple one-off projects.</p>
+        <p>That vision turned into Namma, a creative studio based between Paris, Barcelona &amp; Los Angeles. A digital lab where every web experience is designed to be seen, felt, and remembered.</p>
+        <p>Our obsession? A brilliant idea deserves flawless execution. We deliver pixel-perfect results. End of story.</p>
+      </div>
     </section>
 
-    <section class="studioPlayground">
+    <!-- ==========================================================
+         TEAM
+         IMPORTANT: the old overlapping gallery is completely gone.
+         These three images reveal in sequence, left → right.
+         ========================================================== -->
+    <section class="studio-team" id="studio-team">
+      <div class="studio-team-grid">
+        <article class="studio-team-card">
+          <div class="studio-team-image">
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d157ee856072b2f05c9945_llupscalemedia-transformed.webp" alt="Gabriel, CEO" loading="lazy">
+          </div>
+          <div class="studio-team-name">Gabriel, CEO</div>
+        </article>
 
-        <div class="studioPlaygroundTitle">
+        <article class="studio-team-card">
+          <div class="studio-team-image">
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68b76a47c1eed839d8f12bea_Frame%202147255615.webp" alt="Isaac, COO" loading="lazy">
+          </div>
+          <div class="studio-team-name">Isaac, COO</div>
+        </article>
 
-            <h1 class="animate">
-                PLAYGROUND
-            </h1>
-
-        </div>
-
-
-        <div class="studioImages">
-
-            <div>
-                <img
-                    class="studioImageLeft"
-                    src="./media/pic.jpeg"
-                    alt="Namma Studio">
-            </div>
-
-            <div>
-                <img
-                    class="studioImageRight"
-                    src="./media/Screenshot 2026-09-01 145159.png"
-                    alt="Namma Studio">
-            </div>
-
-            <div>
-                <img
-                    class="studioImageLeft"
-                    src="./media/WhatsApp Image 2026-09-01 at 16.18.58.jpeg"
-                    alt="Namma Studio">
-            </div>
-
-            <div>
-                <img
-                    class="studioImageRight"
-                    src="./media/Screenshot 2026-09-01 145159.png"
-                    alt="Namma Studio">
-            </div>
-
-        </div>
-
+        <article class="studio-team-card">
+          <div class="studio-team-image">
+            <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68da9fce4c07cb190966e26b_ssssdFrame%201171274908.webp" alt="Carla, CMO" loading="lazy">
+          </div>
+          <div class="studio-team-name">Carla, CMO</div>
+        </article>
+      </div>
     </section>
 
+    <!-- ==========================================================
+         FUEL / VALUES
+         ========================================================== -->
+    <section class="studio-fuel">
+      <div class="studio-fuel-heading studio-reveal">
+        <h2>
+          <span class="studio-fuel-line">THE FUEL</span>
+          <span class="studio-fuel-line">
+            <span class="studio-inline-image">
+              <img src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d157ee856072b2f05c9945_llupscalemedia-transformed.webp" alt="">
+            </span>BEHIND
+          </span>
+          <span class="studio-fuel-line">THE CRAFT</span>
+        </h2>
+      </div>
 
-    <section class="studioStory">
+      <div class="studio-values">
+        <article class="studio-value">
+          <div class="studio-value-label">CRAFT</div>
+          <h3 class="studio-value-title">The art<br>of detail</h3>
+          <p class="studio-value-copy">Making things look good is easy. Making them right is another story. Every element we place serves a purpose: to tell a story, to seduce, to convert. It’s that balance between aesthetics and performance that makes people click, scroll, and remember. Nothing’s left to chance except maybe where we set our coffee on the desk.</p>
+        </article>
 
-        <div class="studioLabel">
-            OUR STORY
-        </div>
+        <article class="studio-value">
+          <div class="studio-value-label">NO-CODE &amp; BEYOND</div>
+          <h3 class="studio-value-title">Faster.<br>Smoother.<br>No code.</h3>
+          <p class="studio-value-copy">Digital is our playground. We master the best tools from Webflow to GSAP, via Three.js and the latest trends in UI/UX. But beyond the tech itself, what truly drives us is how it enhances the user experience. If it doesn’t work, congrats — you’ve built a screensaver.</p>
+        </article>
 
+        <article class="studio-value">
+          <div class="studio-value-label">BRIGHTNESS</div>
+          <h3 class="studio-value-title">Serious, but<br>not too much</h3>
+          <p class="studio-value-copy">We thrive on ambitious projects, the kind that challenge us to do better. We aim high and respect deadlines, but we don’t lose our cool in the process. Stress doesn’t fix problems. Clarity, communication, and sharp execution do. There’s always a smarter way forward, sometimes even a beautiful one. We don’t burn out. We build with purpose, adapt fast, and keep things moving. And yes, we sleep just fine at night.</p>
+        </article>
 
-        <div class="studioStoryText">
+        <article class="studio-value">
+          <div class="studio-value-label">AGILITY</div>
+          <h3 class="studio-value-title">Speed is<br>a mindset</h3>
+          <p class="studio-value-copy">The digital world moves at light speed and so do we. We don’t just keep up with the pace, we stay ahead of it. Constantly on the lookout, we explore new ideas, test new methods, and rethink what’s possible. Because in our world, relevance comes with an expiration date.</p>
+        </article>
 
-            <p class="animate">
-                A DIGITAL LAB WHERE EVERY WEB EXPERIENCE
-                IS DESIGNED TO BE SEEN, FELT AND REMEMBERED.
-            </p>
-
-            <p class="animate">
-                WE DON'T BELIEVE IN "JUST A WEBSITE."
-                EVERY DETAIL MATTERS.
-            </p>
-
-            <p class="animate strong">
-                A BRILLIANT IDEA DESERVES
-                FLAWLESS EXECUTION.
-            </p>
-
-            <p class="animate strong">
-                WE DELIVER PIXEL-PERFECT RESULTS.
-                END OF STORY.
-            </p>
-
-        </div>
-
+        <article class="studio-value">
+          <div class="studio-value-label">TRANSPARENCY</div>
+          <h3 class="studio-value-title">No bullshit</h3>
+          <p class="studio-value-copy">We don’t speak in jargon. We don’t bury information under messy processes or endless slide decks. Everything’s laid out — what’s happening, who’s doing it, how, and why. Because transparency isn’t a principle. It’s how we operate. And the only thing blurry around here might be the Google Meet background.</p>
+        </article>
+      </div>
     </section>
-
-
-    <section class="studioTeam">
-
-        <div class="studioTeamHeader">
-
-            <p>
-                THE TEAM
-            </p>
-
-            <p>
-                PEOPLE BEHIND THE PIXELS
-            </p>
-
-        </div>
-
-
-        <div class="teamGrid">
-
-
-            <div class="teamCard">
-
-                <div class="teamPhoto">
-
-                    <img
-                        src="./media/pic.jpeg"
-                        alt="Team member">
-
-                </div>
-
-                <div class="teamInfo">
-
-                    <h3>
-                        CREATIVE
-                    </h3>
-
-                    <p>
-                        DESIGN
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="teamCard">
-
-                <div class="teamPhoto">
-
-                    <img
-                        src="./media/WhatsApp Image 2026-09-01 at 16.18.58.jpeg"
-                        alt="Team member">
-
-                </div>
-
-                <div class="teamInfo">
-
-                    <h3>
-                        DEVELOPMENT
-                    </h3>
-
-                    <p>
-                        WEBFLOW
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="teamCard">
-
-                <div class="teamPhoto">
-
-                    <img
-                        src="./media/Screenshot 2026-09-01 145159.png"
-                        alt="Team member">
-
-                </div>
-
-                <div class="teamInfo">
-
-                    <h3>
-                        STRATEGY
-                    </h3>
-
-                    <p>
-                        BRAND
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-    <section class="studioFuel">
-
-
-        <div class="fuelTitle">
-
-            <h1>
-                THE FUEL
-            </h1>
-
-            <h1>
-                BEHIND
-            </h1>
-
-            <h1>
-                THE CRAFT
-            </h1>
-
-        </div>
-
-
-
-        <div class="fuelList">
-
-
-            <div class="fuelItem">
-
-                <div class="fuelNumber">
-                    01
-                </div>
-
-                <div>
-
-                    <h2>
-                        CRAFT
-
-                        <span>
-                            THE ART OF DETAIL
-                        </span>
-                    </h2>
-
-                    <p>
-                        MAKING THINGS LOOK GOOD IS EASY.
-                        MAKING THEM RIGHT IS ANOTHER STORY.
-                        EVERY ELEMENT SERVES A PURPOSE.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="fuelItem">
-
-                <div class="fuelNumber">
-                    02
-                </div>
-
-                <div>
-
-                    <h2>
-                        NO-CODE & BEYOND
-
-                        <span>
-                            FASTER. SMOOTHER. NO CODE.
-                        </span>
-                    </h2>
-
-                    <p>
-                        DIGITAL IS OUR PLAYGROUND.
-                        WE COMBINE DESIGN, DEVELOPMENT,
-                        INTERACTION AND ANIMATION TO CREATE
-                        EXPERIENCES THAT FEEL ALIVE.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="fuelItem">
-
-                <div class="fuelNumber">
-                    03
-                </div>
-
-                <div>
-
-                    <h2>
-                        BRIGHTNESS
-
-                        <span>
-                            SERIOUS, BUT NOT TOO MUCH
-                        </span>
-                    </h2>
-
-                    <p>
-                        WE AIM HIGH, RESPECT DEADLINES
-                        AND KEEP THE PROCESS CLEAR,
-                        COLLABORATIVE AND ENJOYABLE.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="fuelItem">
-
-                <div class="fuelNumber">
-                    04
-                </div>
-
-                <div>
-
-                    <h2>
-                        AGILITY
-
-                        <span>
-                            SPEED IS A MINDSET
-                        </span>
-                    </h2>
-
-                    <p>
-                        THE DIGITAL WORLD MOVES FAST.
-                        WE EXPLORE NEW IDEAS, TEST NEW METHODS
-                        AND CONSTANTLY RETHINK WHAT IS POSSIBLE.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="fuelItem">
-
-                <div class="fuelNumber">
-                    05
-                </div>
-
-                <div>
-
-                    <h2>
-                        TRANSPARENCY
-
-                        <span>
-                            NO BULLSHIT
-                        </span>
-                    </h2>
-
-                    <p>
-                        EVERYTHING IS LAID OUT.
-                        WHAT IS HAPPENING, WHO IS DOING IT,
-                        HOW AND WHY.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <section class="studioCTA">
-
-        <div class="studioCTATop">
-            LET'S WORK
-            <br>
-            TOGETHER
-        </div>
-
-
-        <h1 class="animate">
-            WORK WITH US
-            <br>
-            IF AVERAGE
-            <br>
-            ISN'T YOUR THING.
-        </h1>
-
-
-        <div class="studioCTABottom">
-
-            <a href="#">
-                SAY HELLO →
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <script src="./nav.js"></script>
-
-
-    <script>
-        let studioTexts =
-            document.querySelectorAll(".animate");
-
-
-        let studioObserver =
-            new IntersectionObserver((entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.15
-            });
-
-
-        studioTexts.forEach((element) => {
-
-            studioObserver.observe(element);
-
+  </main>
+
+  <!-- ============================================================
+       EXISTING PROJECT SCRIPTS — DO NOT REPLACE
+       ============================================================ -->
+  <script src="./nav.js"></script>
+  <script src="./index.js"></script>
+  <script src="./footer.js"></script>
+
+  <script>
+    /* ------------------------------------------------------------
+       Studio-only animation layer.
+       Navbar/footer remain the supplied project files above.
+       ------------------------------------------------------------ */
+
+    (() => {
+      /* HERO CHARACTER BUILD */
+      const hero = document.querySelector('.studio-hero');
+      document.querySelectorAll('.studio-hero-line').forEach((line) => {
+        const text = line.dataset.text || '';
+        [...text].forEach((char, index) => {
+          const span = document.createElement('span');
+          span.className = 'studio-hero-char';
+          span.style.setProperty('--char-index', index);
+          span.textContent = char === ' ' ? '\u00A0' : char;
+          line.appendChild(span);
+        });
+      });
+
+      requestAnimationFrame(() => {
+        setTimeout(() => hero.classList.add('is-ready'), 120);
+      });
+
+      /* NORMAL SCROLL REVEALS */
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px'
+      });
+
+      document.querySelectorAll('.studio-reveal, .studio-value').forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      /* TEAM SEQUENCE: ONE → TWO → THREE */
+      const team = document.getElementById('studio-team');
+      const teamCards = [...document.querySelectorAll('.studio-team-card')];
+      let teamPlayed = false;
+
+      const teamObserver = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting || teamPlayed) return;
+        teamPlayed = true;
+        teamCards.forEach((card, index) => {
+          window.setTimeout(() => card.classList.add('is-visible'), index * 260);
+        });
+        teamObserver.disconnect();
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -10% 0px'
+      });
+
+      if (team) teamObserver.observe(team);
+
+      /* POINTER DOT */
+      const cursor = document.getElementById('studioCursor');
+      if (cursor && matchMedia('(pointer: fine)').matches) {
+        let x = -50;
+        let y = -50;
+        let tx = -50;
+        let ty = -50;
+
+        window.addEventListener('mousemove', (event) => {
+          tx = event.clientX;
+          ty = event.clientY;
+          cursor.style.opacity = '1';
+        }, { passive: true });
+
+        window.addEventListener('mouseleave', () => {
+          cursor.style.opacity = '0';
         });
 
-
-        let studioImages =
-            document.querySelectorAll(
-                ".studioImageLeft, .studioImageRight"
-            );
-
-
-        let imageObserver =
-            new IntersectionObserver((entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.1
-            });
-
-
-        studioImages.forEach((image) => {
-
-            imageObserver.observe(image);
-
-        });
-
-
-        let fuelItems =
-            document.querySelectorAll(".fuelItem");
-
-
-        let fuelObserver =
-            new IntersectionObserver((entries) => {
-
-                entries.forEach((entry) => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.2
-            });
-
-
-        fuelItems.forEach((item) => {
-
-            fuelObserver.observe(item);
-
-        });
-
-    </script>
-
-
-    <script src="./footer.js"></script>
-
-
+        const tick = () => {
+          x += (tx - x) * 0.72;
+          y += (ty - y) * 0.72;
+          cursor.style.left = `${x}px`;
+          cursor.style.top = `${y}px`;
+          requestAnimationFrame(tick);
+        };
+        tick();
+      }
+    })();
+  </script>
 </body>
-
 </html>
