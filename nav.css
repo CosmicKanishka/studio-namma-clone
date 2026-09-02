@@ -240,3 +240,6 @@ a{
     background-color: black;
     color: white;
 }
+.footerRight > p{
+    text-align: start;
+}

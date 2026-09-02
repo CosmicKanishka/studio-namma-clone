@@ -653,7 +653,15 @@ u{
 }
 .art>div>video{
     display: none;
+    width: 350PX;
+    height: 150PX;
 }
 .art>div>p{
     display: none;
+    font-size: medium;
+    color: #5e5959;
+}
+.imageBox > video {
+    width: 400px;
+    height: 250px;
 }

@@ -43,12 +43,13 @@ list.forEach((element) => {
                 text.style.color = "black";
                 v.style.display = "block";
                 p.style.display = "block";
+                 v.style.marginLeft = "0%";    
             } else {
 
                 text.style.color = "gray";
                 v.style.display = "none";
                 p.style.display = "none";
-
+                v.style.marginLeft = "0%";      
             }
 
         });
